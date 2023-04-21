@@ -7,11 +7,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.topBar}>
+        <View style={styles.profileContainer}>
+        </View>
+        <View style={[styles.horizontalBar, { height: 50 }]}>
+        </View>
+      </View>
       <View style={[styles.verticalBar, { height }]}>
         <Text style={styles.timeText}>{new Date().toLocaleTimeString()}</Text>
-        <Text style={styles.locationText}>Current Location:</Text>
+        <Text style={styles.locationText}>Hello</Text>
       </View>
-      <Text>HistoPro</Text>
+      <Text style={styles.appTitle}>HistoPro</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -21,7 +27,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#3d7fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   verticalBar: {
@@ -46,4 +51,33 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     transform: [{ rotate: '90deg' }],
   },
+  topBar: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 80,
+    backgroundColor: '#ffffff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  }, 
+  profileContainer: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    overflow: 'hidden',
+    marginRight: 10,
+  },
+  profileImage: {
+    width: '100%',
+    height: '100%',
+  },
+  appTitle: {
+    marginLeft: 20,
+    fontSize: 50,
+    position: 'absolute',
+    top: 30,
+    left: 125,
+  }
 });
